@@ -22,8 +22,9 @@
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
   width: 600px;
   height: 260px;
-  background-image: url("../assets/PDFcontainer.jpg");
-  background-size: 98% 100%;
+  background-color: #ffffff;
+  /* background-image: url("../assets/PDFcontainer.jpg");
+  background-size: 98% 100%; */
   padding: 10px 30px 40px;
 }
 

@@ -125,6 +125,11 @@ function Sparkles() {
       <div id="particle" />
       <Sidebar/>
       <CreateTest/>
+      <div ontouchstart="">
+  <div className="button">
+    <a href="#" className="vt323-regular"><p>Start</p></a>
+  </div>
+</div>
     </>
   );
 }
