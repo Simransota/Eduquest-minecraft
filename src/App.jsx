@@ -1,31 +1,19 @@
-
-
-import './App.css'
-import Quiz from './pages/DashBoard/Quiz'
-// import Loading from './pages/Loading/Loading'
-// import CreateTest from './components/CreateTest'
-// import Sidebar from './components/Sidebar'
-// import  Sparkles  from './components/Sparkles'
-// import Home from './pages/Home/Home'
-// import SignUp from './pages/Signup.jsx/Signup'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import SignUp from "./pages/Signup.jsx/Signup.jsx"; // Corrected import path
+import Login from "./pages/Login.jsx/Login.jsx";
+import Navbar from "./components/Navbar";
 
 function App() {
-  
-
   return (
-    <>
-    {/* <Loading/> */}
-    {/* <Home/> */}
-    {/* <SignUp/> */}
-    {/* <div className='bg-[#add8e6]'>
-
-    <Sidebar/>
-    <CreateTest/>
-    </div> */}
-    {/* <Sparkles/> */}
-    <Quiz/>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="signup" element={<SignUp />} />
+        {/* <Route path="login" element={<Login />} /> */}
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

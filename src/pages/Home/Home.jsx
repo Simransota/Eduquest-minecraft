@@ -10,12 +10,16 @@ import character2 from "../../assets/how_it_works_2.avif"
 import character3 from "../../assets/how_it_works_3.avif"
 import box from "../../assets/image.png"
 import { BlogCard } from '../../components/Blogcard.jsx';
+import Navbar from '../../components/Navbar.jsx';
+import "../../components/Sparkles.css";
 // import { FooterWithSocialLinks } from "../../components/footer.jsx"
 
 function Home() {
   return (
     <div>
-      <div className="parallax">
+      <Navbar/>
+      
+      <div className="parallax"> 
         <img className="parallax__sky bg-[#785cd4]" src={sky} alt="" />
         <img className="parallax__mountain" src={bg1} alt="" />
          <img className="parallax__bg" src={bg} alt="" />
@@ -43,11 +47,11 @@ function Home() {
           </div>
         </div>
       </div>
-       <div className="image-container w-full absolute top-[-2.6em] ">
+       <div className="image-container w-full absolute top-[-3em] ">
         <img src={box} alt="" />
       </div>
       <div className='bg-[#181414] flex justify-center items-center '>
-        <p className='text-[3em] text-white vt323-regular z-12 absolute top-[28em]'>Features</p>
+        <p className='text-[5em] text-white vt323-regular z-12 absolute top-[56em]'>Features</p>
       </div>
       <div>
         <div className=" absolute left-[-1em] grid grid-cols-3 gap-5">

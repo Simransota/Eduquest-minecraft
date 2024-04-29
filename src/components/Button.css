@@ -1,14 +1,4 @@
-#particle {
-    background-color: rgba(0, 0, 0, 1);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    opacity: 1;
-  }
-  
+ 
   
   .button {
     position: relative;
@@ -62,7 +52,7 @@
     bottom: 0.4em; /* Adjusted position */
     left: -0.4em;
     z-index: -1;
-    background-color: #2B1800;
+    /* background-color: #2B1800; */
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;

@@ -3,43 +3,61 @@ import "./CreateTest.css"
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'; // Import axios for making HTTP requests
+
 function CreateTest() {
   const [fileName, setFileName] = useState('');
   const [email, setEmail] = useState('');
+  const [selectedQuestionType, setSelectedQuestionType] = useState('');
+  const [selectedDifficultyLevel, setSelectedDifficultyLevel] = useState('');
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFileName(selectedFile.name);
   };
 
-  const handleUpload = (e) => {
+  const handleUpload = async (e) => {
     e.preventDefault();
-    // You can add your upload logic here
-    console.log(`Uploading ${fileName} to email: ${email}`);
+    const formData = new FormData();
+    formData.append('pdf_file', document.getElementById('fileID').files[0]);
+    formData.append('email', email);
+    formData.append('question_type', selectedQuestionType);
+    formData.append('difficulty_level', selectedDifficultyLevel);
+
+    try {
+      const response = await axios.post('/api/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
   };
 
   return (
     <div className="container">
-        <h1 className='text-white absolute top-10 vt323-regular' style={{ fontSize: "xx-large" }}>
-            Welcome back Simran,
-        </h1>
-        <p className='text-white text-l absolute top-[5em] vt323-regular'>Build your tests and upload them.</p>
-        <div className='absolute left-[30em] top-[8em] '>
-                <DropdownButton id="dropdown-basic-button" title="Question Type" className='vt323-regular text-l'>
-                    <Dropdown.Item href="#/action-1" >MCQ</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Fill in the Blank</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Long Answers</Dropdown.Item>
-                    <Dropdown.Item href="#/action-4">Short Answers</Dropdown.Item>
-                </DropdownButton>
-            </div>
-        <div className='absolute left-[40em] top-[8em]'>
-                <DropdownButton id="dropdown-basic-button" title="Difficulty level" className='vt323-regular text-l'>
-                    <Dropdown.Item href="#/action-1">Easy</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Medium</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Hard</Dropdown.Item>
-                </DropdownButton>
-        </div>
-        
+      <h1 className='text-white absolute top-10 vt323-regular' style={{ fontSize: "xx-large" }}>
+        Welcome back Simran,
+      </h1>
+      <p className='text-white text-l absolute top-[5em] vt323-regular'>Build your tests and upload them.</p>
+      <div className='absolute left-[30em] top-[8em] '>
+        <DropdownButton id="dropdown-basic-button" title="Question Type" className='vt323-regular text-l'>
+          <Dropdown.Item onClick={() => setSelectedQuestionType('MCQ')}>MCQ</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSelectedQuestionType('Fill in the Blank')}>Fill in the Blank</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSelectedQuestionType('Long Answers')}>Long Answers</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSelectedQuestionType('Short Answers')}>Short Answers</Dropdown.Item>
+        </DropdownButton>
+      </div>
+      <div className='absolute left-[40em] top-[8em]'>
+        <DropdownButton id="dropdown-basic-button" title="Difficulty level" className='vt323-regular text-l'>
+          <Dropdown.Item onClick={() => setSelectedDifficultyLevel('Easy')}>Easy</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSelectedDifficultyLevel('Medium')}>Medium</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSelectedDifficultyLevel('Hard')}>Hard</Dropdown.Item>
+        </DropdownButton>
+      </div>
+
       <div className="card absolute top-[12em]">
         <h3 className='vt323-regular'>Upload Files</h3>
         <div className="drop_box">
@@ -76,7 +94,6 @@ function CreateTest() {
           </div>
         </form>
       )}
-      
     </div>
   );
 }

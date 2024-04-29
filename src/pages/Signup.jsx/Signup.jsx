@@ -22,10 +22,12 @@ function SignUp() {
             <input type="text" placeholder='Username' className='input-text rounded-md p-2 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
             <input type="password" placeholder='Password' className='input-text rounded-md p-2 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
             <div className="px-20 flex justify-between w-full">
-              <input type="Submit" value="Sign up" className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
-              <button className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} >
-                Login
-              </button>
+              <input type="Submit" value="Submit" className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
+              {/* <Link to="/login"> */}
+                <button className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} >
+                  Login
+                </button>
+              {/* </Link> */}
             </div>
           </form>
         </div>
