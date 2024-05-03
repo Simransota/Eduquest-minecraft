@@ -1,6 +1,7 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import videoBg from '../../assets/video.mp4'
+import { Link } from 'react-router-dom';
 import '../../index.css'
 
 function Login() {
@@ -20,10 +21,16 @@ function Login() {
             <input type="text" placeholder='Username' className='input-text rounded-md p-2 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
             <input type="password" placeholder='Password' className='input-text rounded-md p-2 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
             <div className="px-20 flex justify-between w-full">
-              <input type="Submit" value="Sign up" className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} />
-              <button className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} >
-                Login
-              </button>
+            <Link to="/sparkles">
+            <button className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} >
+                  Submit
+                </button>
+                </Link>
+              <Link to="/signup">
+                <button className='cursor-pointer font-poppins rounded-full px-5 py-1 bg-white bg-opacity-50 hover:bg-white hover:bg-opacity-80 vt323-regular my-2' style={{ fontSize: '1.5rem' }} >
+                  Sign Up
+                </button>
+              </Link>
             </div>
           </form>
         </div>

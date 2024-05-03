@@ -14,11 +14,11 @@ function Navbar() {
   };
 
   return (
-    <nav style={{ color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem' }}>
+    <nav style={{ backgroundColor:'black' ,color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem' }}>
       <div style={{ flex: 1, textAlign: 'left' }} className='vt323-regular'>
-        <a href="#" style={{ color: 'white', marginRight: '1rem' }}>Home</a>
-        <a href="#" style={{ color: 'white', marginRight: '1rem' }}>How it works</a>
-        <a href="#" style={{ color: 'white' }}>Features</a>
+        <a href="#" style={{ color: 'white', marginRight: '1rem', textDecoration:'none' }}>Home</a>
+        <a href="#" style={{ color: 'white', marginRight: '1rem', textDecoration:'none' }}>How it works</a>
+        <a href="#" style={{ color: 'white', textDecoration:'none' }}>Features</a>
       </div>
       <div style={{ flex: 1, textAlign: 'center' , marginLeft:'5em'}}>
         <img src={logo} alt="Logo" style={{ width: '100px', height: 'auto' }} />

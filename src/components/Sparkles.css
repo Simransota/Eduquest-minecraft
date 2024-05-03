@@ -13,7 +13,7 @@
   position: relative;
   display: inline-block;
   left: 37em;
-  top: -5em;
+  top: 2em;
 }
 
 .button a {
@@ -26,7 +26,7 @@
   background-color: #2B7CE9;
   display: block;
   position: relative;
-  padding: 9px 19px; /* Decreased padding */
+  padding: 4px 19px 0; /* Decreased padding */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-shadow: 0px 1px 0px #000;
   filter: dropshadow(color=#000, offx=0px, offy=1px);

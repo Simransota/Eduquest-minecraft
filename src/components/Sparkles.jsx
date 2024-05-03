@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 // import particlesJS from "particles.js"; // Import particles.js library
 import "./Sparkles.css"; // Import CSS file
 import Sidebar from "./Sidebar.jsx"
@@ -126,10 +127,14 @@ function Sparkles() {
       <Sidebar/>
       <CreateTest/>
       <div ontouchstart="">
-  <div className="button">
-    <a href="#" className="vt323-regular"><p>Start</p></a>
-  </div>
-</div>
+        <Link to='/quiz'>
+        <button className="absolute top-[45em] left-24">
+          <div className="button ">
+            <a href="#" className="vt323-regular "><p>Start</p></a>
+          </div>
+        </button>
+        </Link>
+        </div>
     </>
   );
 }

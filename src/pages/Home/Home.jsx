@@ -50,11 +50,11 @@ function Home() {
        <div className="image-container w-full absolute top-[-3em] ">
         <img src={box} alt="" />
       </div>
-      <div className='bg-[#181414] flex justify-center items-center '>
+      <div className='bg-[#181414] left-[-1em] flex justify-center items-center '>
         <p className='text-[5em] text-white vt323-regular z-12 absolute top-[56em]'>Features</p>
       </div>
       <div>
-        <div className=" absolute left-[-1em] grid grid-cols-3 gap-5">
+        <div className=" bg-[#181414] absolute top-[87.5em] left-[-1em] pr-[20em]  grid grid-cols-3 gap-[10em]">
           <BlogCard />
           <BlogCard />
           <BlogCard />

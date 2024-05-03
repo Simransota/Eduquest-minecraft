@@ -13,6 +13,12 @@ function Quiz() {
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
     const [offCanvasOpen, setOffCanvasOpen] = useState(false);
     const [checkAnswerVisible, setCheckAnswerVisible] = useState(true);
+  
+
+const handleCloseOffCanvas = () => {
+    setOffCanvasOpen(false);
+};
+
 
     const handleNextQuestion = () => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -96,17 +102,18 @@ function Quiz() {
                                         <button className="btn btn-primary vt323-regular" onClick={checkAnswer} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Check Answer</button>
                                     </div>
                                 )}
-                                <div className={`offcanvas offcanvas-bottom border rounded-xl border-gray-300 ${isAnswerCorrect ? 'bg-green-200' : 'bg-red-200'} ${offCanvasOpen ? 'show' : ''}`} tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                                <div className={`offcanvas offcanvas-bottom border rounded-xl border-gray-300 ${offCanvasOpen ? 'show' : ''}`} tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
                                     <div className="offcanvas-header ml-5 mt-6 font-bold">
                                         <h5 className="offcanvas-title " id="offcanvasBottomLabel ">Answer</h5>
-                                        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                       <button type="button" className="btn-close text-reset" onClick={handleCloseOffCanvas} aria-label="Close"></button>
+
                                     </div>
                                     <div className="offcanvas-body small">
                                         <p className={`vt323-regular ml-5 ${isAnswerCorrect ? 'correct' : 'incorrect'}`}>
                                             {isAnswerCorrect ? 'Correct!' : 'Incorrect!'}
                                         </p>
-                                        <div className="button-next">
-                                        <button className='btn btn-primary vt323-regular ml-5 ' onClick={handleNextQuestion}>Next</button></div>
+                                        <div className="button">
+                                        <button className='btn btn-primary vt323-regular ml-5 absolute left-[40em]' onClick={handleNextQuestion}>Next</button></div>
                                     </div>
                                 </div>
                             </>

@@ -4,6 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'; // Import axios for making HTTP requests
+import Form from 'react-bootstrap/Form';
 
 function CreateTest() {
   const [fileName, setFileName] = useState('');
@@ -42,7 +43,13 @@ function CreateTest() {
         Welcome back Simran,
       </h1>
       <p className='text-white text-l absolute top-[5em] vt323-regular'>Build your tests and upload them.</p>
-      <div className='absolute left-[30em] top-[8em] '>
+      <div className='absolute left-[37em] top-[12em] '>
+      <Form.Control type="text" placeholder="Subject" />
+      </div>
+      <div className='absolute left-[51.5em] top-[12em] '>
+      <Form.Control type="text" placeholder="Test Name" />
+      </div>
+      <div className='absolute left-[17em] top-[12em] '>
         <DropdownButton id="dropdown-basic-button" title="Question Type" className='vt323-regular text-l'>
           <Dropdown.Item onClick={() => setSelectedQuestionType('MCQ')}>MCQ</Dropdown.Item>
           <Dropdown.Item onClick={() => setSelectedQuestionType('Fill in the Blank')}>Fill in the Blank</Dropdown.Item>
@@ -50,7 +57,7 @@ function CreateTest() {
           <Dropdown.Item onClick={() => setSelectedQuestionType('Short Answers')}>Short Answers</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div className='absolute left-[40em] top-[8em]'>
+      <div className='absolute left-[27em] top-[12em]'>
         <DropdownButton id="dropdown-basic-button" title="Difficulty level" className='vt323-regular text-l'>
           <Dropdown.Item onClick={() => setSelectedDifficultyLevel('Easy')}>Easy</Dropdown.Item>
           <Dropdown.Item onClick={() => setSelectedDifficultyLevel('Medium')}>Medium</Dropdown.Item>
@@ -58,7 +65,7 @@ function CreateTest() {
         </DropdownButton>
       </div>
 
-      <div className="card absolute top-[12em]">
+      <div className="card absolute top-[9em]">
         <h3 className='vt323-regular'>Upload Files</h3>
         <div className="drop_box">
           <header>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Sidebar.css'; // Import CSS file
 import 'boxicons'
+import { Link } from 'react-router-dom';
+
 function Sidebar() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isDarkMode, setDarkMode] = useState(false);
@@ -31,17 +33,17 @@ function Sidebar() {
 
       <div className="menu-bar">
         <div className="menu">
-          <li className="search-box">
-            <i className='bx bx-search icon'></i>
-            <input type="text" placeholder="Search Games..." />
-          </li>
-          <ul className="menu-links">
-            <li className="nav-link">
-              <a href="#">
-                <i className='bx bx-home-alt icon'></i>
-                <span className="text nav-text">Dashboard</span>
-              </a>
-            </li>
+         
+        <ul className="menu-links">
+  <li className="nav-link">
+    <Link to='/dashboard'>
+      <a href="#">
+        <i className='bx bx-home-alt icon'></i>
+        <span className="text nav-text">Dashboard</span>
+      </a>
+    </Link>
+  </li>
+            
             <li className="nav-link">
               <a href="#">
                 <i className='bx bx-bar-chart-alt-2 icon'></i>
