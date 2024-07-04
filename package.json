@@ -24,7 +24,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/react-dnd": "^3.0.2",
     "antd": "^5.16.5",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "boxicons": "^2.1.4",

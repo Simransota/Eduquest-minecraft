@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import heart from '../../assets/heart.png';
 import questions from '../DashBoard/Questions.js';
 import DialogBox from '../../components/DialogBox.jsx';
 import "../../components/Button.css";
 import "./Quiz.css";
+import axios from 'axios';
+
+
+const fetchApi = async () => {
+    const response = await axios.get('http://127.0.0.1:5000/api/generate_qna');
+    console.log(response.data.questions_answers);
+}
+
+useEffect(()=>{
+    fetchApi();
+},[]);
 
 function Quiz() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
